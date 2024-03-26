@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 public class IngredientTest {
 
-    private static final String expectedName = RandomStringUtils.randomAlphabetic(9);;
+    private static final String expectedName = RandomStringUtils.randomAlphabetic(9);
     private static final float expectedPrice = (float) (Math.random() * 6);
     private Ingredient ingredient;
 
