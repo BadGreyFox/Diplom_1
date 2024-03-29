@@ -27,8 +27,7 @@
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-            Библиотека для генерации случайных строк
-        -->
+            Библиотека для генерации случайных строк-->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
