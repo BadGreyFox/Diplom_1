@@ -1,25 +1,30 @@
 package praktikum;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static praktikum.data.Constants.DELTA;
+import static praktikum.data.TestData.RANDOM_NAME;
+import static praktikum.data.TestData.RANDOM_PRICE;
 
 public class BunTest {
-    private final String expectedName = RandomStringUtils.randomAlphabetic(9);
-    private final float expectedPrice = (float) (Math.random() * 6);
+    private final String expectedName = RANDOM_NAME;
+    private final float expectedPrice = RANDOM_PRICE;
     private Bun bun;
+
     @Before
-    public void setUp(){
-         bun = new Bun(expectedName, expectedPrice);
+    public void setUpBan() {
+        bun = new Bun(expectedName, expectedPrice);
     }
+
     @Test
-    public void testGetName() {
+    public void checkGetName() {
         assertEquals(expectedName, bun.getName());
     }
+
     @Test
-    public void testGetPrice() {
-        assertEquals(expectedPrice, bun.getPrice(), 0.001);
+    public void checkGetPrice() {
+        assertEquals(expectedPrice, bun.getPrice(), DELTA);
     }
 }

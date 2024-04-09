@@ -1,27 +1,32 @@
 package praktikum;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static praktikum.data.Constants.DELTA;
+import static praktikum.data.TestData.RANDOM_NAME;
+import static praktikum.data.TestData.RANDOM_PRICE;
+
 public class IngredientTest {
 
-    private static final String expectedName = RandomStringUtils.randomAlphabetic(9);
-    private static final float expectedPrice = (float) (Math.random() * 6);
+    private final String expectedName = RANDOM_NAME;
+    private final float expectedPrice = RANDOM_PRICE;
     private Ingredient ingredient;
 
     @Before
-    public void setUp(){
+    public void setUpIngredient() {
         ingredient = new Ingredient(null, expectedName, expectedPrice);
     }
+
     @Test
-    public void testGetName() {
+    public void checkGetName() {
         assertEquals("Имя не соответствует ожидаемому", expectedName, ingredient.getName());
     }
+
     @Test
-    public void testGetPrice() {
-        assertEquals("Цена не соответствует ожидаемому", expectedPrice, ingredient.getPrice(), 0.001);
+    public void checkGetPrice() {
+        assertEquals("Цена не соответствует ожидаемому", expectedPrice, ingredient.getPrice(), DELTA);
     }
 
 }
